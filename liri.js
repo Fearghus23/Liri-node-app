@@ -1,29 +1,23 @@
 require("dotenv").config();
 
-var keys = require('./keys.js');
+// Import keys
+var keys = require("./keys.js");
 
-var spotify = require ('node-spotify-api');
-var request = require('request');
-var moment = require ('moment');
+// Access Spotify keys
+var Spotify = require("node-spotify-api");
+var spotify = new Spotify(keys.spotify);
 
-var spotify = new spotify(keys.spotify);
+// Include axios package
+var axios = require("axios");
 
-var fs = require('fs');
+// Include moment package
+var moment = require('moment');
 
-var nodeArgs = process.argv;
-console.log(process.argv);
+// Include fs package (internal to node)
+var fs = require("fs");
 
-var userInput = "";
-var nextUserInput = "";
+// Command line arguments
+var args = process.argv;
 
-for (var i =3;i<nodeArgs.length;i++){
-  if (i>3 && i<nodeArgs.length){
-    userInput = userInput + '%20' + nodeArgs[i];
-  }
-
-else {
-  userInput =+ nodeArgs[i];
-
-}
-console.log(userInput);
-}
+var command = args[2];
+var title = args[3];
