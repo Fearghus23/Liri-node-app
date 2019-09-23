@@ -11,8 +11,8 @@ var moment = require('moment');
 // Include fs package (internal to node)
 var fs = require("fs");
 var args = process.argv;
-var command = args[2];
 var title = args[3];
+var command = args[2];
 
 console.log("Entered command: " + command);
 console.log("Entered title: " + title);
@@ -57,16 +57,6 @@ switch (command) {
                     console.log("Unknown command: " + iCommand);
             }
         });
-        break;
-    case 'help':
-        console.log("COMMANDS:");
-        console.log("concert-this '<band>': Shows concert info for a given band");
-        console.log("spotify-this-song '<song-name>': Shows song information from Spotify");
-        console.log("movie-this '<movie-title>': Shows movie information for the given title");
-        console.log("do-what-it-says: Executes command in the 'random.txt' file (format: <command>,\"<title>\")");
-        break;
-    default:
-        console.log("Unknown command (type 'help' for list of commands)");
 }
 function concertThis(artist) {
     if (artist !== undefined) {
@@ -101,9 +91,9 @@ function concertThis(artist) {
 }
 function spotifyThis(title) {
     if (title === undefined) {
-        title = 'time in a bottle';
+        title = 'ace of base';
     }
-    spotify.search({ type: 'track', query: title }, function (error, data) {
+    spotify.search({ type: 'track', query: title, limit: 20 }, function (error, data) {
         if (error) {
             return console.log("Error occurred: " + error);
         }
