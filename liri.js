@@ -10,9 +10,7 @@ var axios = require("axios");
 var moment = require('moment');
 // Include fs package (internal to node)
 var fs = require("fs");
-
 var args = process.argv;
-
 var command = args[2];
 var title = args[3];
 
@@ -35,28 +33,28 @@ switch (command) {
                 return console.log(error);
             }
             var textCommand = data.split(",");
-            var fCommand = textCommand[0];
-            var fTitle;
+            var iCommand = textCommand[0];
+            var iTitle;
             if (textCommand[1] !== undefined) {
-                fTitle = textCommand[1].replace(/['"]+/g, '');
+                iTitle = textCommand[1].replace(/['"]+/g, '');
             }
-            console.log("Text Command: " + fCommand);
-            console.log("Text Title: " + fTitle);
-            switch (fCommand) {
+            console.log("Text Command: " + iCommand);
+            console.log("Text Title: " + iTitle);
+            switch (iCommand) {
                 case 'concert-this':
-                    concertThis(fTitle);
+                    concertThis(iTitle);
                     break;
                 case 'spotify-this-song':
-                    spotifyThis(fTitle);
+                    spotifyThis(iTitle);
                     break;
                 case 'movie-this':
-                    movieThis(fTitle);
+                    movieThis(iTitle);
                     break;
                 case 'do-what-it-says':
                     console.log("We don't want any loops now...");
                     break;
                 default:
-                    console.log("Unknown command: " + fCommand);
+                    console.log("Unknown command: " + iCommand);
             }
         });
         break;
@@ -103,7 +101,7 @@ function concertThis(artist) {
 }
 function spotifyThis(title) {
     if (title === undefined) {
-        title = 'the sign ace of base';
+        title = 'time in a bottle';
     }
     spotify.search({ type: 'track', query: title }, function (error, data) {
         if (error) {
