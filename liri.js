@@ -51,7 +51,7 @@ switch (command) {
                     movieThis(iTitle);
                     break;
                 case 'do-what-it-says':
-                    console.log("We don't want any loops now...");
+                    console.log("Keep from looping");
                     break;
                 default:
                     console.log("Unknown command: " + iCommand);
@@ -85,9 +85,7 @@ function concertThis(artist) {
                 }
                 console.log("**********************");
             });
-    } else {
-        console.log("Please enter an artist");
-    }
+    } 
 }
 function spotifyThis(title) {
     if (title === undefined) {
