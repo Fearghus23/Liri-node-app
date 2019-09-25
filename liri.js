@@ -81,11 +81,11 @@ function concertThis(artist) {
                         console.log("No concerts found.");
                     }
                 } else {
-                    console.log("Artist not found...");
+                    console.log("Artist not found.");
                 }
                 console.log("**********************");
             });
-    } 
+    }
 }
 function spotifyThis(title) {
     if (title === undefined) {
