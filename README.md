@@ -7,7 +7,7 @@ Commands you may input are as follows:
 4: do-what-it-says
 Each command can be followed by what you are searching for, with the acception being the number 4 command that defaults to a given artist.
 
-![screenshot](./screenShots/2019-09-24.png)
-![screenshot](./screenShots/2019-09-24 (1).png)
-![screenshot](./screenShots/2019-09-24 (3).png)
-![screenshot](./screenShots/2019-09-24 (4).png)
+![screenshot](./screenShots/2019-09-24.png);
+![screenshot](./screenShots/2019-09-24 (1).png);
+![screenshot](./screenShots/2019-09-24 (3).png);
+![screenshot](./screenShots/2019-09-24 (4).png);
